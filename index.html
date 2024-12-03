@@ -1,1 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wichtelteam</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Video-Hintergrund -->
+  <div class="video-container">
+    <video autoplay loop muted playsinline>
+      <source src="hintergrund2.mp4" type="video/mp4">
+      Dein Browser unterstützt dieses Videoformat nicht.
+    </video>
+  </div>
 
+  <!-- Passwort-Eingabebereich -->
+  <div id="password-screen">
+    <h2>Schlüssel eingeben</h2>
+    <input type="password" id="password-input" placeholder="Schlüssel">
+    <button id="submit-button">Hinweis lüften</button>
+    <p id="error-message" style="color: red; display: none;">Schade, falscher Schlüssel! Kombiniere deine Hinweise nochmals neu.</p>
+  </div>
+
+  <!-- Website-Inhalt (wird später sichtbar) -->
+  <div id="content" style="display: none;">
+    <div class="text-box">
+    <h1>Willkommen im geheimen Bereich der Weihnachtsnavigationssoftware!</h1>
+    <p>Hier sind alle Adressen der Empfänger, alle Seriennummern und GPS-Signale der Geschenke abgelegt.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
