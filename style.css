@@ -1,0 +1,106 @@
+/* Grundstil */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  overflow: auto;  /*   Kein Scrollen */
+}
+
+h1{
+  color: #00ff00;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+p{
+  color:  #00ff00;
+  font-size: 1em; 
+}
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .item {
+      background: #f4f4f4;
+      padding: 20px;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      header {
+        font-size: 18px;
+      }
+    }
+
+/* Halbtransparentes Feld */
+.text-box {
+  position: fixed;
+  top: 15%;
+  left: 7%;
+  background-color: rgba(0, 0, 0, 0.8); /* Schwarz mit 50% Transparenz */
+  padding: 20px;
+  border-radius: 10px; /* Abgerundete Ecken */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Schatteneffekt */
+  text-align: center;
+  max-width: 6000px; /* Begrenzte Breite */
+}
+
+/* Video-Hintergrund */
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Hintergrundebene */
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Video passt sich dem Bildschirm an */
+}
+
+/* Passwortbildschirm */
+#password-screen {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7); /* Halbtransparentes Schwarz */
+  color: white;
+  padding: 60px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1; /* Über dem Video */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Leichter Schatten */
+}
+
+#password-input {
+  padding: 10px;
+  font-size: 1em;
+  margin-top: 10px;
+  width: 100%;
+}
+
+#submit-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* Website-Inhalt */
+#content {
+  position: relative;
+  text-align: center;
+  color: white;
+  z-index: 1; /* Über dem Video */
+  padding: 20px;
+  display: none; /* Versteckt bis Login */
+}
