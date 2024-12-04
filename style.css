@@ -40,7 +40,7 @@ p{
 /* Halbtransparentes Feld */
 .text-box {
   position: fixed;
-  top: 15%;
+  top: 35%;
   left: 7%;
   background-color: rgba(0, 0, 0, 0.8); /* Schwarz mit 50% Transparenz */
   padding: 20px;
@@ -103,4 +103,24 @@ p{
   z-index: 1; /* Über dem Video */
   padding: 20px;
   display: none; /* Versteckt bis Login */
+}
+
+.wichtel-box{
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    display: inline-block;
+    border-radius: 10px; /* Option: Abgerundete Ecken */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Option: Schatten */
+}
+.wichtel-img{
+  width: 250px;
+  height: auto;
+}
+.center-container{
+    display: flex;
+    justify-content: center; /* Horizontal zentrieren */
+    align-items: flex-start;    /* Vertikal zentrieren */
+    height: 100vh;          /* Nimmt die volle Höhe des Viewports ein */
+    background-color: rgba(0, 0, 0, 0.1); /* Optional: leicht grauer Hintergrund */
+    margin: 0;              /* Entfernt Standardabstände des Browsers */
 }
