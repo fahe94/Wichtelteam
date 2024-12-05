@@ -4,18 +4,18 @@ body, html {
   padding: 0;
   height: 100%;
   font-family: Arial, sans-serif;
-  overflow: auto;  /*   Kein Scrollen */
+  /*overflow: auto;  /*   Kein Scrollen */
 }
 
 h1{
   color: #00ff00;
-  font-size: 3em;
+  font-size: 1em;
   font-weight: bold;
 }
 
 p{
   color:  #00ff00;
-  font-size: 1em; 
+  font-size: 0.5em; 
 }
 
     .container {
@@ -27,27 +27,63 @@ p{
 
     .item {
       background: #f4f4f4;
+      margin: 10px;
       padding: 20px;
       text-align: center;
     }
 
-    @media (max-width: 480px) {
-      header {
-        font-size: 18px;
-      }
+@media (orientation: portrait) {
+    /* Spezifische Anpassungen für den vertikalen Modus */
+    .flex-container {
+        flex-direction: column;
+        height: auto;  /* Auto-Höhe, damit der Inhalt flexibel bleibt */
+        width: 100%;   /* Vollständige Breite */
     }
+
+    .text-box {
+        max-width: 90%;  /* Passt die maximale Breite der Textbox an */
+        margin: 10px auto; /* Zentriert die Textbox */
+    }
+}
+
+/* Breite und Höhe für kleinere Geräte */
+@media (max-width: 768px) {
+   .flex-container {
+       flex-direction: column; /* Vertikale Anordnung */
+       gap: 10px;
+   }
+
+   .text-box {
+       width: 95%;
+   }
+
+   h1 {
+       font-size: 2rem; /* Kleinere Schrift für kleine Geräte */
+   }
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh;
+  /*height: 100%;*/
+  width: 100%;
+  padding: 20px;
+  margin: 0;
+  flex-wrap: wrap;
+  gap: 1em;
+}
 
 /* Halbtransparentes Feld */
 .text-box {
-  position: fixed;
-  top: 35%;
-  left: 7%;
   background-color: rgba(0, 0, 0, 0.8); /* Schwarz mit 50% Transparenz */
   padding: 20px;
   border-radius: 10px; /* Abgerundete Ecken */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Schatteneffekt */
+  /*box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Schatteneffekt */
   text-align: center;
-  max-width: 6000px; /* Begrenzte Breite */
+  margin: 10px auto;
+  /*max-width: 80%; /* Begrenzte Breite */
 }
 
 /* Video-Hintergrund */
@@ -68,10 +104,11 @@ p{
 
 /* Passwortbildschirm */
 #password-screen {
-  position: fixed;
+  /*position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  width: 30%;
+  transform: translate(-50%, -50%);*/
   background: rgba(0, 0, 0, 0.7); /* Halbtransparentes Schwarz */
   color: white;
   padding: 60px;
@@ -81,7 +118,7 @@ p{
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Leichter Schatten */
 }
 
-#password-input {
+input[type="password"]{
   padding: 10px;
   font-size: 1em;
   margin-top: 10px;
@@ -100,27 +137,40 @@ p{
   position: relative;
   text-align: center;
   color: white;
-  z-index: 1; /* Über dem Video */
+  z-index: 2; /* Über dem Video */
   padding: 20px;
   display: none; /* Versteckt bis Login */
 }
 
-.wichtel-box{
+.img-box{
     background-color: rgba(255, 255, 255, 0.5);
     padding: 20px;
     display: inline-block;
     border-radius: 10px; /* Option: Abgerundete Ecken */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Option: Schatten */
 }
-.wichtel-img{
+.img-img{
   width: 250px;
   height: auto;
 }
 .center-container{
     display: flex;
-    justify-content: center; /* Horizontal zentrieren */
-    align-items: flex-start;    /* Vertikal zentrieren */
-    height: 100vh;          /* Nimmt die volle Höhe des Viewports ein */
-    background-color: rgba(0, 0, 0, 0.1); /* Optional: leicht grauer Hintergrund */
+    flex-direction: column;
+    height: 80%;          /* Nimmt die volle Höhe des Viewports ein */
+    width: 100%;
     margin: 0;              /* Entfernt Standardabstände des Browsers */
+}
+
+.section {
+  display: none; /* Standardmäßig ausgeblendet */
+/*  text-align: center;
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+}
+
+.visible {
+  display: block; /* Sichtbar, wenn aktiv */
 }
