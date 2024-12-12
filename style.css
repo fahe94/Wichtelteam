@@ -6,16 +6,15 @@ body, html {
   font-family: Arial, sans-serif;
   /*overflow: auto;  /*   Kein Scrollen */
 }
-
 h1{
   color: #00ff00;
-  font-size: 1em;
+  font-size: 3vw;
   font-weight: bold;
 }
 
 p{
   color:  #00ff00;
-  font-size: 0.5em; 
+  font-size:  clamp(14px, 2vw, 20px); 
 }
 
     .container {
@@ -56,10 +55,13 @@ p{
    .text-box {
        width: 95%;
    }
-
    h1 {
-       font-size: 2rem; /* Kleinere Schrift für kleine Geräte */
+       font-size:  clamp(16px, 3vw, 24px);  /* Kleinere Schrift für kleine Geräte */
    }
+  p{
+      color:  #00ff00;
+      font-size:  clamp(14px, 2vw, 20px); 
+}
 }
 
 .flex-container {
